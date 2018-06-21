@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AE1CAC820DB4B7F00E02EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */; };
+		5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */; };
+		5AE1CACF20DB4B8000E02EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1CACE20DB4B8000E02EDD /* Assets.xcassets */; };
+		5AE1CADA20DB4C2300E02EDD /* MenuLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAD920DB4C2300E02EDD /* MenuLauncher.swift */; };
+		5AE1CADC20DB4C5200E02EDD /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CADB20DB4C5200E02EDD /* MenuCell.swift */; };
+		5AE1CADE20DB4CA000E02EDD /* HomeScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CADD20DB4CA000E02EDD /* HomeScreenCell.swift */; };
+		5AE1CAE020DB4CF200E02EDD /* HomeScreenIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CADF20DB4CF200E02EDD /* HomeScreenIcons.swift */; };
+		5AE1CAE220DB4D1500E02EDD /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAE120DB4D1400E02EDD /* AboutUsController.swift */; };
+		5AE1CAE420DB4E8100E02EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1CAE320DB4E8100E02EDD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5AE1CAC420DB4B7F00E02EDD /* Mt.Everest-Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mt.Everest-Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5AE1CACE20DB4B8000E02EDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AE1CAD320DB4B8000E02EDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AE1CAD920DB4C2300E02EDD /* MenuLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLauncher.swift; sourceTree = "<group>"; };
+		5AE1CADB20DB4C5200E02EDD /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		5AE1CADD20DB4CA000E02EDD /* HomeScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCell.swift; sourceTree = "<group>"; };
+		5AE1CADF20DB4CF200E02EDD /* HomeScreenIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenIcons.swift; sourceTree = "<group>"; };
+		5AE1CAE120DB4D1400E02EDD /* AboutUsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
+		5AE1CAE320DB4E8100E02EDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AE1CAC120DB4B7F00E02EDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AE1CABB20DB4B7F00E02EDD = {
+			isa = PBXGroup;
+			children = (
+				5AE1CAC620DB4B7F00E02EDD /* Mt.Everest-Burger */,
+				5AE1CAC520DB4B7F00E02EDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AE1CAC520DB4B7F00E02EDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AE1CAC420DB4B7F00E02EDD /* Mt.Everest-Burger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AE1CAC620DB4B7F00E02EDD /* Mt.Everest-Burger */ = {
+			isa = PBXGroup;
+			children = (
+				5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */,
+				5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */,
+				5AE1CAE120DB4D1400E02EDD /* AboutUsController.swift */,
+				5AE1CACE20DB4B8000E02EDD /* Assets.xcassets */,
+				5AE1CAE320DB4E8100E02EDD /* LaunchScreen.storyboard */,
+				5AE1CAD320DB4B8000E02EDD /* Info.plist */,
+				5AE1CADF20DB4CF200E02EDD /* HomeScreenIcons.swift */,
+				5AE1CAD920DB4C2300E02EDD /* MenuLauncher.swift */,
+				5AE1CADB20DB4C5200E02EDD /* MenuCell.swift */,
+				5AE1CADD20DB4CA000E02EDD /* HomeScreenCell.swift */,
+			);
+			path = "Mt.Everest-Burger";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AE1CAC320DB4B7F00E02EDD /* Mt.Everest-Burger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AE1CAD620DB4B8000E02EDD /* Build configuration list for PBXNativeTarget "Mt.Everest-Burger" */;
+			buildPhases = (
+				5AE1CAC020DB4B7F00E02EDD /* Sources */,
+				5AE1CAC120DB4B7F00E02EDD /* Frameworks */,
+				5AE1CAC220DB4B7F00E02EDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mt.Everest-Burger";
+			productName = "Mt.Everest-Burger";
+			productReference = 5AE1CAC420DB4B7F00E02EDD /* Mt.Everest-Burger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AE1CABC20DB4B7F00E02EDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Divya Pandit Chhetri";
+				TargetAttributes = {
+					5AE1CAC320DB4B7F00E02EDD = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 5AE1CABF20DB4B7F00E02EDD /* Build configuration list for PBXProject "Mt.Everest-Burger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AE1CABB20DB4B7F00E02EDD;
+			productRefGroup = 5AE1CAC520DB4B7F00E02EDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AE1CAC320DB4B7F00E02EDD /* Mt.Everest-Burger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AE1CAC220DB4B7F00E02EDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE1CACF20DB4B8000E02EDD /* Assets.xcassets in Resources */,
+				5AE1CAE420DB4E8100E02EDD /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AE1CAC020DB4B7F00E02EDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AE1CAE220DB4D1500E02EDD /* AboutUsController.swift in Sources */,
+				5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */,
+				5AE1CADA20DB4C2300E02EDD /* MenuLauncher.swift in Sources */,
+				5AE1CADC20DB4C5200E02EDD /* MenuCell.swift in Sources */,
+				5AE1CAC820DB4B7F00E02EDD /* AppDelegate.swift in Sources */,
+				5AE1CADE20DB4CA000E02EDD /* HomeScreenCell.swift in Sources */,
+				5AE1CAE020DB4CF200E02EDD /* HomeScreenIcons.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5AE1CAD420DB4B8000E02EDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5AE1CAD520DB4B8000E02EDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AE1CAD720DB4B8000E02EDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mt.Everest-Burger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DivyaChhetri.Mt-Everest-Burger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AE1CAD820DB4B8000E02EDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mt.Everest-Burger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DivyaChhetri.Mt-Everest-Burger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AE1CABF20DB4B7F00E02EDD /* Build configuration list for PBXProject "Mt.Everest-Burger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AE1CAD420DB4B8000E02EDD /* Debug */,
+				5AE1CAD520DB4B8000E02EDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AE1CAD620DB4B8000E02EDD /* Build configuration list for PBXNativeTarget "Mt.Everest-Burger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AE1CAD720DB4B8000E02EDD /* Debug */,
+				5AE1CAD820DB4B8000E02EDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AE1CABC20DB4B7F00E02EDD /* Project object */;
+}
