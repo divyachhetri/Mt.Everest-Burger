@@ -8,8 +8,9 @@
 
 import UIKit
 
-class HomeController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HomeController: UIViewController {
     
+    let iconArray = IconDetails()
     let burgerImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "burgerHomeImage"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,8 +27,9 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         
     }()
     
-    let menuLauncher = MenuLauncher()
-    let iconArray = HomeScreenIcons()
+   let  menuLauncher = MenuLauncher()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        menuLauncher.delegate = self
         view.backgroundColor = .white
         collectionView.register(HomeScreenCell.self, forCellWithReuseIdentifier: "CellId")
         setUpNavigationBar()
@@ -49,7 +52,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "left-arrow")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "left-arrow")
-        navigationItem.backBarButtonItem?.tintColor = .white
+        self.navigationItem.backBarButtonItem?.tintColor = .white
         setNavBarItems()
     }
     
@@ -65,6 +68,7 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         navigationItem.titleView = searchBar
         
     }
+    
     func setupLayout() {
         view.addSubview(burgerImageView)
         burgerImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -72,8 +76,8 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         burgerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         burgerImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true
     }
+    
     func setCollectionView() {
-        
         view.addSubview(collectionView)
         collectionView.topAnchor.constraint(equalTo: burgerImageView.bottomAnchor).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -84,6 +88,24 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     @objc func showMenu() {
         menuLauncher.launchMenu()
     }
+    
+   
+    
+}
+extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout ,MenuDelegate {
+    
+    
+    
+    func menuDidSelectItem (index: Int) {
+        if index == 0 {
+            menuLauncher.dismissMenu()
+        }
+        else {
+              showSelectedController(index: (index - 1))
+        }
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -104,9 +126,8 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let aboutUSController = AboutUsController()
-        //present(aboutUSController, animated: true, completion: nil)
-        self.navigationController?.pushViewController(aboutUSController, animated: true)
+      showSelectedController(index: indexPath.row)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -116,10 +137,53 @@ class HomeController: UIViewController, UICollectionViewDataSource, UICollection
         
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         
         UIView.animate(withDuration: 0.2, delay: 0.2, options: UIViewAnimationOptions.allowUserInteraction, animations: {cell?.contentView.backgroundColor = nil}, completion: nil)
+    }
+   
+    func showSelectedController (index : Int) {
+        
+        let aboutUSController = AboutUsController()
+        let contactUsController = ContactUsController()
+        let itemController = ItemController()
+        let itemDetails = ItemDetails()
+        switch index {
+        case 0:
+             self.navigationController?.pushViewController(aboutUSController, animated: true)
+        case 1:
+            itemController.itemImage = itemDetails.coffeeImage
+            itemController.itemText = itemDetails.coffeeText
+            itemController.itemTitle = itemDetails.coffeeTitle
+            itemController.itemCount = itemDetails.coffeeTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+        case 2:
+            itemController.itemImage = itemDetails.burgerImage
+            itemController.itemText = itemDetails.burgerText
+            itemController.itemTitle = itemDetails.burgerTitle
+            itemController.itemCount = itemDetails.burgerTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+        case 3:
+            itemController.itemImage = itemDetails.sizzlerImage
+            itemController.itemText = itemDetails.sizzlerText
+            itemController.itemTitle = itemDetails.sizzlerTitle
+            itemController.itemCount = itemDetails.sizzlerTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+        case 5:
+            itemController.itemImage = itemDetails.steakImage
+            itemController.itemText = itemDetails.steakText
+            itemController.itemTitle = itemDetails.steakTitle
+            itemController.itemCount = itemDetails.steakTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+            
+        case 7:
+             self.navigationController?.pushViewController(contactUsController, animated: true)
+            
+        default:
+           print("tadtaada")
+        }
     }
     
 }

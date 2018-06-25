@@ -10,7 +10,7 @@ import UIKit
 
 class AboutUsController: UIViewController {
     
-    let burgerImageView : UIImageView = {
+    private let burgerImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "about_us_page"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -40,10 +40,10 @@ class AboutUsController: UIViewController {
         super.viewDidLayoutSubviews()
         self.descriptiontextView.setContentOffset(.zero, animated: false)
     }
-    func setUpLayout () {
+    private func setUpLayout () {
         view.addSubview(burgerImageView)
         view.addSubview(descriptiontextView)
-        burgerImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 58).isActive = true
+        burgerImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
         burgerImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         burgerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         burgerImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4).isActive = true

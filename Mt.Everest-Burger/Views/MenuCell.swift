@@ -21,14 +21,14 @@ class MenuCell: UICollectionViewCell {
         addSubview(iconImageView)
         addSubview(iconLabel)
         
-        iconImageView.topAnchor.constraint (equalTo: contentView.topAnchor).isActive = true
-        iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        iconImageView.topAnchor.constraint (equalTo: contentView.topAnchor, constant: 10).isActive = true
+        iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        iconImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2).isActive = true
+        iconImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15).isActive = true
         iconImageView.contentMode = .scaleAspectFit
         
-        iconLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
-        iconLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        iconLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        iconLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
         iconLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 30).isActive = true
         iconLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
         iconLabel.font = UIFont(name: "Futura", size: 15)

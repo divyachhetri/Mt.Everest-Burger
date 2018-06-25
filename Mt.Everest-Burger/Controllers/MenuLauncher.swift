@@ -11,7 +11,9 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     
     let blackView = UIView()
     let menuView = UIView()
-    let icons = HomeScreenIcons()
+    let icons = IconDetails()
+    var homeController: HomeController?
+    var delegate: MenuDelegate?
     
     let burgerImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "Menu Burger"))
@@ -43,7 +45,7 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
             collectionView.frame = CGRect(x: 0, y: (window.frame.height*0.3), width: 0, height: (window.frame.height*0.7))
             blackView.frame = window.frame
             blackView.alpha = 0
-            
+        
             UIView.animate(withDuration: 0.5) {
                 self.blackView.alpha = 1
                 self.menuView.frame = CGRect(x: 0, y: 0, width: 250, height: window.frame.height)
@@ -54,7 +56,7 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     @objc func dismissMenu() {
-        UIView.animate(withDuration: 0.0) {
+        UIView.animate(withDuration: 0.1) {
             self.blackView.alpha = 0
             if let window = UIApplication.shared.keyWindow{
                 self.menuView.frame = CGRect(x: 0, y: 0, width: 0, height: window.frame.height)
@@ -65,7 +67,7 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
         }
         
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return icons.menuIconName.count
     }
@@ -94,6 +96,8 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        self.delegate?.menuDidSelectItem(index: indexPath.row)
+            dismissMenu()
         
         
     }
@@ -107,4 +111,8 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
     }
     
     
+}
+
+protocol MenuDelegate {
+    func menuDidSelectItem (index : Int)
 }
