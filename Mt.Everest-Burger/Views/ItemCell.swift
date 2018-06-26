@@ -28,7 +28,7 @@ class ItemCell: UICollectionViewCell {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         
-        itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
         itemImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         itemImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         itemImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6).isActive = true
@@ -39,13 +39,15 @@ class ItemCell: UICollectionViewCell {
         titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         titleLabel.textColor = .red
+        titleLabel.font = UIFont(name: "Futura", size: 17)
         
         
-        descriptionLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 32).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 34).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         descriptionLabel.numberOfLines = 0
+        descriptionLabel.font = UIFont(name: "Futura", size: 15)
     }
     
     

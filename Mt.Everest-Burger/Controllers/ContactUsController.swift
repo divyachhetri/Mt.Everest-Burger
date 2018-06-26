@@ -19,6 +19,7 @@ class ContactUsController: UITableViewController {
         self.navigationItem.title = "CONTACT US"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         tableView.register(ContactUsCell.self, forCellReuseIdentifier: "CellId")
+        
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionHeaders.count
