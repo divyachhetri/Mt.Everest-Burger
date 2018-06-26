@@ -107,6 +107,13 @@ class ItemController: UIViewController, MenuDelegate {
             itemCount = itemDetails.sizzlerTitle.count
             collectionView.reloadData()
             
+        case 5:
+            itemImage = itemDetails.breakfastImage
+            itemText = itemDetails.breakfastText
+            itemTitle = itemDetails.breakfastTitle
+            itemCount = itemDetails.breakfastTitle.count
+            collectionView.reloadData()
+            
         case 6:
             itemCount = itemDetails.steakTitle.count
             itemTitle = itemDetails.steakTitle

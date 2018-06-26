@@ -36,7 +36,7 @@ class ItemCell: UICollectionViewCell {
         
         titleLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 0).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5).isActive = true
+        titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         titleLabel.textColor = .red
         

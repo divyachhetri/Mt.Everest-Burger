@@ -171,6 +171,13 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
             itemController.itemTitle = itemDetails.sizzlerTitle
             itemController.itemCount = itemDetails.sizzlerTitle.count
             self.navigationController?.pushViewController(itemController, animated: true)
+        case 4:
+            itemController.itemImage = itemDetails.breakfastImage
+            itemController.itemText = itemDetails.breakfastText
+            itemController.itemTitle = itemDetails.breakfastTitle
+            itemController.itemCount = itemDetails.breakfastTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+            
         case 5:
             itemController.itemImage = itemDetails.steakImage
             itemController.itemText = itemDetails.steakText

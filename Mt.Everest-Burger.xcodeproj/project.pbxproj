@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A4538B620E17EF100876FC7 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4538B520E17EF100876FC7 /* ItemCell.swift */; };
 		5A4538B820E1890F00876FC7 /* ItemDetails .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4538B720E1890F00876FC7 /* ItemDetails .swift */; };
+		5A48E47520E1C5D700820758 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48E47420E1C5D700820758 /* DetailsController.swift */; };
 		5AA6A75120DCB8F40055E1C5 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6A75020DCB8F40055E1C5 /* ItemController.swift */; };
 		5AE1CAC820DB4B7F00E02EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */; };
 		5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		5A4538B520E17EF100876FC7 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		5A4538B720E1890F00876FC7 /* ItemDetails .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ItemDetails .swift"; sourceTree = "<group>"; };
+		5A48E47420E1C5D700820758 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		5AA6A75020DCB8F40055E1C5 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		5AE1CAC420DB4B7F00E02EDD /* Mt.Everest-Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mt.Everest-Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				5AE1CAE120DB4D1400E02EDD /* AboutUsController.swift */,
 				5AE1CAE520DB546800E02EDD /* ContactUsController.swift */,
 				5AA6A75020DCB8F40055E1C5 /* ItemController.swift */,
+				5A48E47420E1C5D700820758 /* DetailsController.swift */,
 				5AE1CAD920DB4C2300E02EDD /* MenuLauncher.swift */,
 			);
 			path = Controllers;
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A48E47520E1C5D700820758 /* DetailsController.swift in Sources */,
 				5AE1CAE220DB4D1500E02EDD /* AboutUsController.swift in Sources */,
 				5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */,
 				5A4538B820E1890F00876FC7 /* ItemDetails .swift in Sources */,
