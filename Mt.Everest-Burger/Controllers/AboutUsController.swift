@@ -31,7 +31,7 @@ class AboutUsController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.navigationItem.title = "Toast with Jam and Honey"
+        self.navigationItem.title = "ABOUT US"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         setUpLayout()
     }

@@ -10,9 +10,9 @@ import UIKit
 
 class DetailsController: UIViewController, UIScrollViewDelegate {
     
-    var itemImage = ""
     var itemTitle = ""
     var itemText = ""
+    var array = ItemDetails()
     var scrollView = UIScrollView()
     
     private var itemImageView : UIImageView = {
@@ -37,6 +37,7 @@ class DetailsController: UIViewController, UIScrollViewDelegate {
         self.navigationItem.title = itemTitle
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         setUpLayout()
+        print(array.breakfastText.count)
 
     }
     private func setUpLayout () {
@@ -55,7 +56,7 @@ class DetailsController: UIViewController, UIScrollViewDelegate {
         itemImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
         itemImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -10).isActive = true
         itemImageView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 0.25).isActive = true
-        itemImageView.image = UIImage(named: itemImage)
+        itemImageView.image = UIImage(named: itemTitle)
 
         descriptiontextLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 0.0).isActive = true
         descriptiontextLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true

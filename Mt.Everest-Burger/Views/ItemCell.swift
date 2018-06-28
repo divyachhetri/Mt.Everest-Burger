@@ -28,7 +28,7 @@ class ItemCell: UICollectionViewCell {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
         
-        itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        itemImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         itemImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         itemImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         itemImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.6).isActive = true

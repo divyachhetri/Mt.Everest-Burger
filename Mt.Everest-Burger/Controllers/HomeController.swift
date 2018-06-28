@@ -11,6 +11,7 @@ import UIKit
 class HomeController: UIViewController {
     
     let iconArray = IconDetails()
+   
     let burgerImageView : UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "burgerHomeImage"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,10 +28,9 @@ class HomeController: UIViewController {
         
     }()
     
-   let  menuLauncher = MenuLauncher()
-    
-    
-    
+    let  menuLauncher = MenuLauncher()
+    let searchBar = UISearchBar()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,9 +63,10 @@ class HomeController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         menuButton.addTarget(self, action: #selector(showMenu), for: .touchUpInside)
         
-        let searchBar = UISearchBar()
+        
         searchBar.placeholder = "Search..."
         navigationItem.titleView = searchBar
+        searchBar.delegate = self
         
     }
     
@@ -92,20 +93,7 @@ class HomeController: UIViewController {
    
     
 }
-extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout ,MenuDelegate {
-    
-    
-    
-    func menuDidSelectItem (index: Int) {
-        if index == 0 {
-            menuLauncher.dismissMenu()
-        }
-        else {
-              showSelectedController(index: (index - 1))
-        }
-        
-    }
-    
+extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -143,56 +131,94 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
         
         UIView.animate(withDuration: 0.2, delay: 0.2, options: UIViewAnimationOptions.allowUserInteraction, animations: {cell?.contentView.backgroundColor = nil}, completion: nil)
     }
-   
+}
+
+extension HomeController : MenuDelegate{
+    
+    func menuDidSelectItem (index: Int) {
+        if index == 0 {
+            menuLauncher.dismissMenu()
+        }
+        else {
+            showSelectedController(index: (index - 1))
+        }
+        
+    }
+    
     func showSelectedController (index : Int) {
         
         let aboutUSController = AboutUsController()
         let contactUsController = ContactUsController()
-        let itemController = ItemController()
+         let itemController = ItemController()
+      
+        
         let itemDetails = ItemDetails()
         switch index {
         case 0:
              self.navigationController?.pushViewController(aboutUSController, animated: true)
         case 1:
-            itemController.itemImage = itemDetails.coffeeImage
             itemController.itemText = itemDetails.coffeeText
             itemController.itemTitle = itemDetails.coffeeTitle
-            itemController.itemCount = itemDetails.coffeeTitle.count
             self.navigationController?.pushViewController(itemController, animated: true)
         case 2:
-            itemController.itemImage = itemDetails.burgerImage
             itemController.itemText = itemDetails.burgerText
             itemController.itemTitle = itemDetails.burgerTitle
-            itemController.itemCount = itemDetails.burgerTitle.count
             self.navigationController?.pushViewController(itemController, animated: true)
         case 3:
-            itemController.itemImage = itemDetails.sizzlerImage
             itemController.itemText = itemDetails.sizzlerText
             itemController.itemTitle = itemDetails.sizzlerTitle
-            itemController.itemCount = itemDetails.sizzlerTitle.count
             self.navigationController?.pushViewController(itemController, animated: true)
         case 4:
-            itemController.itemImage = itemDetails.breakfastImage
             itemController.itemText = itemDetails.breakfastText
             itemController.itemTitle = itemDetails.breakfastTitle
-            itemController.itemCount = itemDetails.breakfastTitle.count
             self.navigationController?.pushViewController(itemController, animated: true)
             
         case 5:
-            itemController.itemImage = itemDetails.steakImage
             itemController.itemText = itemDetails.steakText
             itemController.itemTitle = itemDetails.steakTitle
-            itemController.itemCount = itemDetails.steakTitle.count
+            self.navigationController?.pushViewController(itemController, animated: true)
+        case 6:
+            itemController.itemText = itemDetails.specialText
+            itemController.itemTitle = itemDetails.specialTitle
             self.navigationController?.pushViewController(itemController, animated: true)
             
         case 7:
              self.navigationController?.pushViewController(contactUsController, animated: true)
             
         default:
-           print("tadtaada")
+           print("Error")
         }
     }
     
 }
+extension HomeController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let itemController = ItemController()
+        let itemArray : [Items] = Items.generateItemsArray()
+        var searchedItemArray : [Items] = Items.generateItemsArray()
+        searchedItemArray = itemArray.filter({ (item) -> Bool in
+            return item.name.lowercased().contains(searchBar.text!.lowercased())
+        })
+        for item in searchedItemArray {
+            itemController.itemTitle.append(item.name)
+            itemController.itemText.append(item.text)
+        }
+       
+        navigationController?.pushViewController(itemController, animated: true)
+        searchBar.endEditing(true)
+        
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+    }
+    
+}
+}
+
+
 
 

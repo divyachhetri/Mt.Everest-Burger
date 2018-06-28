@@ -14,11 +14,9 @@ class ItemController: UIViewController, MenuDelegate {
     let menuLauncher = MenuLauncher()
     
     let itemDetails = ItemDetails()
-    var itemImage = [""]
-    var itemTitle = [""]
-    var itemText = [""]
-    var itemCount = 0
-    
+    var itemTitle = [String]()
+    var itemText = [String]()
+   
     let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -38,7 +36,9 @@ class ItemController: UIViewController, MenuDelegate {
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: "CellId")
         setNavBarItems()
         setCollectionView()
-        //print(itemDetails.coffeeImage)
+
+    
+    
 
         
     }
@@ -57,6 +57,7 @@ class ItemController: UIViewController, MenuDelegate {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search..."
         navigationItem.titleView = searchBar
+        searchBar.delegate = self
         
     }
     
@@ -87,40 +88,34 @@ class ItemController: UIViewController, MenuDelegate {
         case 1:
             self.navigationController?.pushViewController(aboutUSController, animated: true)
         case 2:
-            itemCount = itemDetails.coffeeTitle.count
             itemTitle = itemDetails.coffeeTitle
-            itemImage = itemDetails.coffeeImage
             itemText = itemDetails.coffeeText
             collectionView.reloadData()
           
         case 3:
-            itemCount = itemDetails.burgerTitle.count
             itemTitle = itemDetails.burgerTitle
-            itemImage = itemDetails.burgerImage
             itemText = itemDetails.burgerText
             collectionView.reloadData()
     
         case 4:
-            itemImage = itemDetails.sizzlerImage
             itemText = itemDetails.sizzlerText
             itemTitle = itemDetails.sizzlerTitle
-            itemCount = itemDetails.sizzlerTitle.count
             collectionView.reloadData()
             
         case 5:
-            itemImage = itemDetails.breakfastImage
             itemText = itemDetails.breakfastText
             itemTitle = itemDetails.breakfastTitle
-            itemCount = itemDetails.breakfastTitle.count
             collectionView.reloadData()
             
         case 6:
-            itemCount = itemDetails.steakTitle.count
             itemTitle = itemDetails.steakTitle
-            itemImage = itemDetails.steakImage
             itemText = itemDetails.steakText
             collectionView.reloadData()
-            menuLauncher.dismissMenu()
+    
+        case 7:
+            itemTitle = itemDetails.specialTitle
+            itemText = itemDetails.specialText
+            collectionView.reloadData()
         case 8:
             self.navigationController?.pushViewController(contactUsController, animated: true)
             
@@ -133,13 +128,13 @@ extension ItemController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return itemCount
+        return itemTitle.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath) as! ItemCell
-        cell.itemImageView.image = UIImage(named: itemImage[indexPath.row])
+        cell.itemImageView.image = UIImage(named: itemTitle[indexPath.row])
         cell.titleLabel.text = itemTitle[indexPath.row]
         cell.descriptionLabel.text = itemText[indexPath.row]
         return cell
@@ -152,7 +147,6 @@ extension ItemController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let detailsController = DetailsController()
-        detailsController.itemImage = itemImage[indexPath.row]
         detailsController.itemText = itemText[indexPath.row]
         detailsController.itemTitle = itemTitle[indexPath.row]
         self.navigationController?.pushViewController(detailsController, animated: true)
@@ -172,6 +166,36 @@ extension ItemController: UICollectionViewDataSource, UICollectionViewDelegate, 
         UIView.animate(withDuration: 0.2, delay: 0.2, options: UIViewAnimationOptions.allowUserInteraction, animations: {cell?.contentView.backgroundColor = nil}, completion: nil)
     }
     
+    
+    
+}
+extension ItemController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        itemTitle = []
+        itemText = []
+        let itemArray : [Items] = Items.generateItemsArray()
+        var searchedItemArray : [Items] = Items.generateItemsArray()
+        searchedItemArray = itemArray.filter({ (item) -> Bool in
+            return item.name.lowercased().contains(searchBar.text!.lowercased())
+        })
+        for item in searchedItemArray {
+            itemTitle.append(item.name)
+           itemText.append(item.text)
+        }
+        
+       collectionView.reloadData()
+        searchBar.endEditing(true)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+        
+    }
     
     
 }
