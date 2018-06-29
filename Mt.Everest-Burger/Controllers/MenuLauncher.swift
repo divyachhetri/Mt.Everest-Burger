@@ -38,7 +38,7 @@ class MenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelega
             window.addSubview(blackView)
             window.addSubview(menuView)
             menuView.addSubview(burgerImageView)
-            window.addSubview(collectionView)
+            menuView.addSubview(collectionView)
             
             menuView.frame = CGRect(x: 0, y: 0, width: 0, height: window.frame.height)
             burgerImageView.frame = CGRect(x: 0, y: 0, width: 0, height: (window.frame.height*0.3))

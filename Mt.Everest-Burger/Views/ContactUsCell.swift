@@ -25,13 +25,10 @@ class ContactUsCell: UITableViewCell {
     func setUpLayout() {
         addSubview(iconImageView)
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
         iconImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant : 15).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

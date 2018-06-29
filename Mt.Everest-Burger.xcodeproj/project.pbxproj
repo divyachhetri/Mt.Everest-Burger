@@ -12,6 +12,8 @@
 		5A48E47520E1C5D700820758 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A48E47420E1C5D700820758 /* DetailsController.swift */; };
 		5AA6A75120DCB8F40055E1C5 /* ItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6A75020DCB8F40055E1C5 /* ItemController.swift */; };
 		5AD173D120E42A8900F75DA5 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD173D020E42A8900F75DA5 /* Items.swift */; };
+		5AD173D320E465A100F75DA5 /* HomeController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD173D220E465A100F75DA5 /* HomeController+Menu.swift */; };
+		5AD173D520E49B2E00F75DA5 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD173D420E49B2E00F75DA5 /* MapController.swift */; };
 		5AE1CAC820DB4B7F00E02EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */; };
 		5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */; };
 		5AE1CACF20DB4B8000E02EDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1CACE20DB4B8000E02EDD /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		5AE1CAE420DB4E8100E02EDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE1CAE320DB4E8100E02EDD /* LaunchScreen.storyboard */; };
 		5AE1CAE620DB546800E02EDD /* ContactUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAE520DB546800E02EDD /* ContactUsController.swift */; };
 		5AE1CAEA20DB64D800E02EDD /* ContactUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE1CAE920DB64D800E02EDD /* ContactUsCell.swift */; };
+		5AF1ED5120E5799C008E58CD /* itemController+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF1ED5020E5799C008E58CD /* itemController+Menu.swift */; };
+		5AF1ED5320E57E1C008E58CD /* WebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF1ED5220E57E1C008E58CD /* WebsiteController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,8 @@
 		5A48E47420E1C5D700820758 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		5AA6A75020DCB8F40055E1C5 /* ItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemController.swift; sourceTree = "<group>"; };
 		5AD173D020E42A8900F75DA5 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		5AD173D220E465A100F75DA5 /* HomeController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Menu.swift"; sourceTree = "<group>"; };
+		5AD173D420E49B2E00F75DA5 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		5AE1CAC420DB4B7F00E02EDD /* Mt.Everest-Burger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mt.Everest-Burger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE1CAC720DB4B7F00E02EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE1CAC920DB4B7F00E02EDD /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -44,6 +50,8 @@
 		5AE1CAE320DB4E8100E02EDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AE1CAE520DB546800E02EDD /* ContactUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsController.swift; sourceTree = "<group>"; };
 		5AE1CAE920DB64D800E02EDD /* ContactUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsCell.swift; sourceTree = "<group>"; };
+		5AF1ED5020E5799C008E58CD /* itemController+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "itemController+Menu.swift"; sourceTree = "<group>"; };
+		5AF1ED5220E57E1C008E58CD /* WebsiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,8 @@
 				5AE1CAE520DB546800E02EDD /* ContactUsController.swift */,
 				5AA6A75020DCB8F40055E1C5 /* ItemController.swift */,
 				5A48E47420E1C5D700820758 /* DetailsController.swift */,
+				5AD173D420E49B2E00F75DA5 /* MapController.swift */,
+				5AF1ED5220E57E1C008E58CD /* WebsiteController.swift */,
 				5AE1CAD920DB4C2300E02EDD /* MenuLauncher.swift */,
 			);
 			path = Controllers;
@@ -124,9 +134,19 @@
 				5A48E47020E1B08A00820758 /* Model */,
 				5A48E47120E1B0B000820758 /* Views */,
 				5A48E47220E1B0CA00820758 /* Controllers */,
+				5AF1ED4F20E57921008E58CD /* Extensions */,
 				5A48E47320E1B0D700820758 /* Supporting Files */,
 			);
 			path = "Mt.Everest-Burger";
+			sourceTree = "<group>";
+		};
+		5AF1ED4F20E57921008E58CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AD173D220E465A100F75DA5 /* HomeController+Menu.swift */,
+				5AF1ED5020E5799C008E58CD /* itemController+Menu.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD173D520E49B2E00F75DA5 /* MapController.swift in Sources */,
 				5A48E47520E1C5D700820758 /* DetailsController.swift in Sources */,
 				5AE1CAE220DB4D1500E02EDD /* AboutUsController.swift in Sources */,
 				5AE1CACA20DB4B7F00E02EDD /* HomeController.swift in Sources */,
@@ -207,7 +228,10 @@
 				5AE1CADA20DB4C2300E02EDD /* MenuLauncher.swift in Sources */,
 				5A4538B620E17EF100876FC7 /* ItemCell.swift in Sources */,
 				5AE1CADC20DB4C5200E02EDD /* MenuCell.swift in Sources */,
+				5AF1ED5320E57E1C008E58CD /* WebsiteController.swift in Sources */,
+				5AD173D320E465A100F75DA5 /* HomeController+Menu.swift in Sources */,
 				5AE1CAE620DB546800E02EDD /* ContactUsController.swift in Sources */,
+				5AF1ED5120E5799C008E58CD /* itemController+Menu.swift in Sources */,
 				5AE1CAC820DB4B7F00E02EDD /* AppDelegate.swift in Sources */,
 				5AE1CADE20DB4CA000E02EDD /* HomeScreenCell.swift in Sources */,
 				5AE1CAE020DB4CF200E02EDD /* IconDetails.swift in Sources */,
@@ -338,7 +362,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM24X5C74T;
 				INFOPLIST_FILE = "Mt.Everest-Burger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +381,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GM24X5C74T;
 				INFOPLIST_FILE = "Mt.Everest-Burger/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

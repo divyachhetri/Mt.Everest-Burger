@@ -8,15 +8,14 @@
 
 import UIKit
 
-class ItemController: UIViewController, MenuDelegate {
+class ItemController: UIViewController{
     
     let homeView = HomeController()
     let menuLauncher = MenuLauncher()
     
-    let itemDetails = ItemDetails()
     var itemTitle = [String]()
     var itemText = [String]()
-   
+    
     let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -30,17 +29,10 @@ class ItemController: UIViewController, MenuDelegate {
         super.viewDidLoad()
         
         menuLauncher.delegate = self
-        collectionView.dataSource = self
-        collectionView.delegate = self
         view.backgroundColor = .white
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: "CellId")
         setNavBarItems()
         setCollectionView()
-
-    
-    
-
-        
     }
 
     func setNavBarItems() {
@@ -71,85 +63,49 @@ class ItemController: UIViewController, MenuDelegate {
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
-    
-    func menuDidSelectItem(index: Int) {
-        showSelectedController(index: index)
-    }
-    func showSelectedController (index : Int) {
-        
-        let aboutUSController = AboutUsController()
-        let contactUsController = ContactUsController()
-        let homeController = HomeController()
-        switch index {
-        case 0:
-            self.navigationController?.pushViewController(homeController, animated: true)
-        case 1:
-            self.navigationController?.pushViewController(aboutUSController, animated: true)
-        case 2:
-            itemTitle = itemDetails.coffeeTitle
-            itemText = itemDetails.coffeeText
-            collectionView.reloadData()
-          
-        case 3:
-            itemTitle = itemDetails.burgerTitle
-            itemText = itemDetails.burgerText
-            collectionView.reloadData()
-    
-        case 4:
-            itemText = itemDetails.sizzlerText
-            itemTitle = itemDetails.sizzlerTitle
-            collectionView.reloadData()
-            
-        case 5:
-            itemText = itemDetails.breakfastText
-            itemTitle = itemDetails.breakfastTitle
-            collectionView.reloadData()
-            
-        case 6:
-            itemTitle = itemDetails.steakTitle
-            itemText = itemDetails.steakText
-            collectionView.reloadData()
-    
-        case 7:
-            itemTitle = itemDetails.specialTitle
-            itemText = itemDetails.specialText
-            collectionView.reloadData()
-        case 8:
-            self.navigationController?.pushViewController(contactUsController, animated: true)
-            
-        default:
-            menuLauncher.dismissMenu()
-        }
-    }
 }
+
 extension ItemController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return itemTitle.count
+        let count = itemTitle.isEmpty ? 1 : itemTitle.count
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath) as! ItemCell
-        cell.itemImageView.image = UIImage(named: itemTitle[indexPath.row])
-        cell.titleLabel.text = itemTitle[indexPath.row]
-        cell.descriptionLabel.text = itemText[indexPath.row]
+        if itemTitle.isEmpty {
+            cell.descriptionLabel.text = "No Such Item in Database!"
+            cell.descriptionLabel.textAlignment = .center
+            cell.itemImageView.isHidden = true
+            cell.titleLabel.isHidden = true
+        }
+        else{
+            cell.itemImageView.isHidden = false
+            cell.titleLabel.isHidden = false
+            cell.itemImageView.image = UIImage(named: itemTitle[indexPath.row])
+            cell.titleLabel.text = itemTitle[indexPath.row]
+            cell.descriptionLabel.text = itemText[indexPath.row]
+        }
         return cell
-        
-        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: (view.frame.height * 0.35))
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if itemTitle.isEmpty == false{
+            let detailsController = DetailsController()
+            detailsController.itemText = itemText[indexPath.row]
+            detailsController.itemTitle = itemTitle[indexPath.row]
+            self.navigationController?.pushViewController(detailsController, animated: true)
+        }
         
-        let detailsController = DetailsController()
-        detailsController.itemText = itemText[indexPath.row]
-        detailsController.itemTitle = itemTitle[indexPath.row]
-        self.navigationController?.pushViewController(detailsController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -171,21 +127,8 @@ extension ItemController: UICollectionViewDataSource, UICollectionViewDelegate, 
 }
 extension ItemController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        itemTitle = []
-        itemText = []
-        let itemArray : [Items] = Items.generateItemsArray()
-        var searchedItemArray : [Items] = Items.generateItemsArray()
-        searchedItemArray = itemArray.filter({ (item) -> Bool in
-            return item.name.lowercased().contains(searchBar.text!.lowercased())
-        })
-        for item in searchedItemArray {
-            itemTitle.append(item.name)
-           itemText.append(item.text)
-        }
-        
-       collectionView.reloadData()
+        filterItems(name: searchBar.text!)
         searchBar.endEditing(true)
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -195,6 +138,22 @@ extension ItemController: UISearchBarDelegate {
             }
         }
         
+    }
+    
+    func filterItems(name:String){
+        itemTitle = []
+        itemText = []
+        let itemArray : [Items] = Items.generateItemsArray()
+        var searchedItemArray : [Items] = Items.generateItemsArray()
+        searchedItemArray = itemArray.filter({ (item) -> Bool in
+            return item.name.lowercased().contains(name.lowercased())
+        })
+        for item in searchedItemArray {
+            itemTitle.append(item.name)
+            itemText.append(item.text)
+        }
+        
+        collectionView.reloadData()
     }
     
     
